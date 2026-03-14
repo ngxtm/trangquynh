@@ -1605,7 +1605,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: b2d375988ef81614cae1770bf7edf8aa, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4150109921c5c4f4ab9b1b2b0178e95a, type: 2}
+      objectReference: {fileID: 2100000, guid: 17bd843ca43e3954797791acfe70fd4d, type: 2}
     - target: {fileID: 919132149155446097, guid: b2d375988ef81614cae1770bf7edf8aa, type: 3}
       propertyPath: m_Name
       value: BienBaoChoDongHuong
