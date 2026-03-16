@@ -61,6 +61,11 @@ namespace GinjaGaming.FinalCharacterController
             LookInput = context.ReadValue<Vector2>();
         }
 
+        public void ClearLookInput()
+        {
+            LookInput = Vector2.zero;
+        }
+
         public void OnToggleSprint(InputAction.CallbackContext context)
         {
             if (context.performed)
