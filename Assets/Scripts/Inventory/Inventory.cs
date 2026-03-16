@@ -330,15 +330,33 @@ public class Inventory : MonoBehaviour
             return;
         }
 
-        Vector3 dropPosition = Camera.main.transform.position + Camera.main.transform.forward;
+        Vector3 dropPosition = Camera.main.transform.position + (Camera.main.transform.forward * 1.5f) + (Vector3.up * 0.25f);
         GameObject dropped = Instantiate(prefab, dropPosition, Quaternion.identity);
 
         Item item = dropped.GetComponent<Item>();
-        if (item != null)
+        if (item == null)
         {
-            item.item = itemSO;
-            item.amount = equippedSlot.GetAmount();
+            item = dropped.AddComponent<Item>();
         }
+
+        Collider droppedCollider = dropped.GetComponentInChildren<Collider>();
+        if (droppedCollider == null)
+        {
+            MeshCollider meshCollider = dropped.AddComponent<MeshCollider>();
+            meshCollider.convex = true;
+        }
+
+        Rigidbody droppedRigidbody = dropped.GetComponent<Rigidbody>();
+        if (droppedRigidbody == null)
+        {
+            droppedRigidbody = dropped.AddComponent<Rigidbody>();
+        }
+
+        droppedRigidbody.useGravity = true;
+        droppedRigidbody.isKinematic = false;
+
+        item.item = itemSO;
+        item.amount = equippedSlot.GetAmount();
 
         equippedSlot.ClearSlot();
         EquipHandItem();
@@ -348,7 +366,7 @@ public class Inventory : MonoBehaviour
     {
         if (lookedAtRenderer != null && Input.GetKeyDown(KeyCode.E))
         {
-            Item item = lookedAtRenderer.GetComponent<Item>();
+            Item item = lookedAtRenderer.GetComponentInParent<Item>();
             if (item != null)
             {
                 AddItem(item.item, item.amount);
@@ -370,10 +388,10 @@ public class Inventory : MonoBehaviour
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         if (Physics.Raycast(ray, out RaycastHit hit, pickupRange))
         {
-            Item item = hit.collider.GetComponent<Item>();
+            Item item = hit.collider.GetComponentInParent<Item>();
             if (item != null)
             {
-                Renderer rend = item.GetComponent<Renderer>();
+                Renderer rend = item.GetComponentInChildren<Renderer>();
                 if (rend != null)
                 {
                     lookedAtRenderer = rend;
