@@ -1,9 +1,11 @@
 using System.Collections.Generic;
+using DialogueEditor;
 using GinjaGaming.FinalCharacterController;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+
 public class Inventory : MonoBehaviour
 {
     public ItemSO chopstickItem;
@@ -65,7 +67,11 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        bool isConversationOpen = ConversationManager.Instance != null && ConversationManager.Instance.IsConversationActive;
+
+        ApplyInventoryState();
+
+        if (Input.GetKeyDown(KeyCode.Tab) && !isConversationOpen)
         {
             container.SetActive(!container.activeInHierarchy);
             ApplyInventoryState();
@@ -73,11 +79,15 @@ public class Inventory : MonoBehaviour
 
         if (container != null && container.activeInHierarchy)
         {
-            ApplyInventoryState();
             StartDrag();
             UpdateDragItemPosition();
             EndDrag();
             UpdateItemDescription();
+            return;
+        }
+
+        if (isConversationOpen)
+        {
             return;
         }
 
@@ -101,13 +111,14 @@ public class Inventory : MonoBehaviour
 
                 if (currentAmount < maxStack)
                 {
-                    int spaceLeft = maxStack - currentAmount;
-                    int amountToAdd = Mathf.Min(spaceLeft, remaining);
-                    slot.SetItem(itemToAdd, currentAmount + amountToAdd);
-                    remaining -= amountToAdd;
+                    int amountCanAdd = Mathf.Min(maxStack - currentAmount, remaining);
+                    slot.SetItem(itemToAdd, currentAmount + amountCanAdd);
+                    remaining -= amountCanAdd;
 
                     if (remaining <= 0)
+                    {
                         return;
+                    }
                 }
             }
         }
@@ -116,12 +127,14 @@ public class Inventory : MonoBehaviour
         {
             if (!slot.HasItem())
             {
-                int amountToAdd = Mathf.Min(itemToAdd.maxStackSize, remaining);
-                slot.SetItem(itemToAdd, amountToAdd);
-                remaining -= amountToAdd;
+                int amountCanAdd = Mathf.Min(itemToAdd.maxStackSize, remaining);
+                slot.SetItem(itemToAdd, amountCanAdd);
+                remaining -= amountCanAdd;
 
                 if (remaining <= 0)
+                {
                     return;
+                }
             }
         }
 
@@ -129,6 +142,88 @@ public class Inventory : MonoBehaviour
         {
             Debug.Log("Not enough space in inventory for " + remaining + " " + itemToAdd.itemName);
         }
+    }
+
+    public int GetTotalAmount(ItemSO item)
+    {
+        if (item == null)
+        {
+            return 0;
+        }
+
+        int total = 0;
+        foreach (Slot slot in allSlots)
+        {
+            if (IsMatchingItem(slot.GetItem(), item))
+            {
+                total += slot.GetAmount();
+            }
+        }
+
+        return total;
+    }
+
+    public bool HasItemAmount(ItemSO item, int requiredAmount = 1)
+    {
+        return GetTotalAmount(item) >= requiredAmount;
+    }
+
+    public bool RemoveItem(ItemSO item, int amountToRemove = 1)
+    {
+        if (item == null || amountToRemove <= 0)
+        {
+            return false;
+        }
+
+        if (!HasItemAmount(item, amountToRemove))
+        {
+            return false;
+        }
+
+        int remaining = amountToRemove;
+        foreach (Slot slot in allSlots)
+        {
+            if (!IsMatchingItem(slot.GetItem(), item))
+            {
+                continue;
+            }
+
+            int slotAmount = slot.GetAmount();
+            if (slotAmount <= remaining)
+            {
+                remaining -= slotAmount;
+                slot.ClearSlot();
+            }
+            else
+            {
+                slot.RemoveAmount(remaining);
+                remaining = 0;
+            }
+
+            if (remaining <= 0)
+            {
+                EquipHandItem();
+                return true;
+            }
+        }
+
+        EquipHandItem();
+        return remaining <= 0;
+    }
+
+    private bool IsMatchingItem(ItemSO slotItem, ItemSO targetItem)
+    {
+        if (slotItem == null || targetItem == null)
+        {
+            return false;
+        }
+
+        if (slotItem == targetItem)
+        {
+            return true;
+        }
+
+        return slotItem.itemName == targetItem.itemName;
     }
 
     private void StartDrag()
@@ -449,13 +544,15 @@ public class Inventory : MonoBehaviour
     private void ApplyInventoryState()
     {
         bool isInventoryOpen = container != null && container.activeInHierarchy;
+        bool isConversationOpen = ConversationManager.Instance != null && ConversationManager.Instance.IsConversationActive;
+        bool shouldUnlockCursor = isInventoryOpen || isConversationOpen;
 
         if (playerController != null)
         {
-            playerController.SetCameraControlEnabled(!isInventoryOpen);
+            playerController.SetCameraControlEnabled(!shouldUnlockCursor);
         }
 
-        if (isInventoryOpen)
+        if (shouldUnlockCursor)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
