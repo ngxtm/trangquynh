@@ -818,7 +818,7 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1353601112}
+      - m_Target: {fileID: 1353601114}
         m_TargetAssemblyTypeName: Mission1Controller, Assembly-CSharp
         m_MethodName: MarkIntroAccepted
         m_Mode: 1
@@ -1477,11 +1477,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ab54d40cc13daa40bf1ba2a61724d32, type: 3}
---- !u!1 &155471980 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5898209872343802550, guid: e4e3eaaedf6fcb84ca7674016dc105ca, type: 3}
-  m_PrefabInstance: {fileID: 874390235}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &183018978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,7 +1528,7 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1353601112}
+      - m_Target: {fileID: 1353601114}
         m_TargetAssemblyTypeName: Mission1Controller, Assembly-CSharp
         m_MethodName: MarkIntroAccepted
         m_Mode: 1
@@ -2395,17 +2390,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 324447416}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7663f468466dad243a7f317b7642cbd8, type: 3}
-  m_Name: 
+  m_Script: {fileID: 11500000, guid: ef161e6b5979553438654b95caccaf07, type: 3}
+  m_Name:
   m_EditorClassIdentifier: Assembly-CSharp::MissionChecklistUI
-  panelRoot: {fileID: 0}
-  titleText: {fileID: 0}
-  bagLabel: {fileID: 0}
-  chopstickLabel: {fileID: 0}
-  hoeLabel: {fileID: 0}
-  bagTick: {fileID: 0}
-  chopstickTick: {fileID: 0}
-  hoeTick: {fileID: 0}
+  panelRoot: {fileID: 324447416}
+  titleText: {fileID: 1745974295}
+  bagLabel: {fileID: 1214516103}
+  chopstickLabel: {fileID: 1148527035}
+  hoeLabel: {fileID: 648365855}
+  bagTick: {fileID: 1810599306}
+  chopstickTick: {fileID: 1624940534}
+  hoeTick: {fileID: 1626512414}
 --- !u!1 &335472815
 GameObject:
   m_ObjectHideFlags: 0
@@ -4340,7 +4335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede31d13443fe6b4b81d2cbb1ef68d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MiniGameManager
-  inputManagerObject: {fileID: 155471980}
   dragDropCanvas: {fileID: 352641526}
   playerMovementScript: {fileID: 982881721}
 --- !u!4 &564300865
@@ -10981,8 +10975,8 @@ GameObject:
   - component: {fileID: 1353601109}
   - component: {fileID: 1353601111}
   - component: {fileID: 1353601110}
-  - component: {fileID: 1353601112}
   - component: {fileID: 1353601113}
+  - component: {fileID: 1353601114}
   m_Layer: 0
   m_Name: ConversationTrigger
   m_TagString: Untagged
@@ -11039,30 +11033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConversationStarter
   myConversation: {fileID: 80735701}
---- !u!114 &1353601112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353601108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35c2c025b64280e47b50313f4412c1ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Mission1Controller
-  conversationStarter: {fileID: 0}
-  inventory: {fileID: 0}
-  moneyManager: {fileID: 0}
-  checklistUI: {fileID: 0}
-  bagItem: {fileID: 0}
-  chopstickItem: {fileID: 0}
-  hoeItem: {fileID: 0}
-  introConversation: {fileID: 0}
-  reminderConversation: {fileID: 0}
-  completeConversation: {fileID: 0}
-  afterQuestConversation: {fileID: 0}
-  rewardMoney: 10
 --- !u!114 &1353601113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11077,6 +11047,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   item: {fileID: 11400000, guid: 67a1f652a9d5bf947a71b33f958c47cc, type: 2}
   amount: 1
+--- !u!114 &1353601114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353601108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6841d8f871ee1c9468076cbcc766c4e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Mission1Controller
+  conversationStarter: {fileID: 1353601111}
+  inventory: {fileID: 1327380840}
+  moneyManager: {fileID: 266456144}
+  checklistUI: {fileID: 324447421}
+  bagItem: {fileID: 11400000, guid: 67a1f652a9d5bf947a71b33f958c47cc, type: 2}
+  chopstickItem: {fileID: 11400000, guid: f982fbbb60b911c469aaf0f4bc3e106d, type: 2}
+  hoeItem: {fileID: 11400000, guid: e56e3ebcded9eee429142e835f40e604, type: 2}
+  introConversation: {fileID: 80735701}
+  reminderConversation: {fileID: 1197031812}
+  completeConversation: {fileID: 1513339928}
+  afterQuestConversation: {fileID: 1964408330}
+  rewardMoney: 10
 --- !u!1001 &1355588305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14054,6 +14048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b903fb5c44406f047a8dbe4ecf48ae21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropZone
+  miniGameManager: {fileID: 0}
   OnWinGame:
     m_PersistentCalls:
       m_Calls: []
@@ -14773,6 +14768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b903fb5c44406f047a8dbe4ecf48ae21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropZone
+  miniGameManager: {fileID: 0}
   OnWinGame:
     m_PersistentCalls:
       m_Calls: []
@@ -14828,6 +14824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b903fb5c44406f047a8dbe4ecf48ae21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropZone
+  miniGameManager: {fileID: 0}
   OnWinGame:
     m_PersistentCalls:
       m_Calls:
