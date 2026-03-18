@@ -1670,7 +1670,7 @@ MonoBehaviour:
   NodeID: 0
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 8300000, guid: a3d0c4190997bf448b0a07368d0fe466, type: 3}
 --- !u!1 &189603906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,10 +1994,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor.NPCConversation
   CurrentIDCounter: 3
-  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":true,\"xPos\":284.90567,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ch\xE1u
+  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":true,\"xPos\":81.29999,\"yPos\":22.8000031},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ch\xE1u
     ch\u01B0a giao th\u01B0 \xE0? Nh\u1EDB mang \u0111\u1EBFn \xD4ng Quan T\u1ED5ng
     nh\xE9!\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"B\xE1c
-    Giao Th\u01B0\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+    Giao Th\u01B0\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -2259,10 +2259,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor.NPCConversation
   CurrentIDCounter: 1
-  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":true,\"xPos\":284.90567,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xC0
+  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":true,\"xPos\":78.09999,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"\xC0
     th\u01B0 r\u1ED3i! C\u1EA3m \u01A1n ch\xE1u, \u0111\xE2y l\xE0 th\u01B0\u1EDFng
     cho ch\xE1u.\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\xD4ng
-    Quan T\u1ED5ng\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+    Quan T\u1ED5ng\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -2391,7 +2391,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef161e6b5979553438654b95caccaf07, type: 3}
-  m_Name:
+  m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MissionChecklistUI
   panelRoot: {fileID: 324447416}
   titleText: {fileID: 1745974295}
@@ -6551,7 +6551,7 @@ MonoBehaviour:
   NodeID: 0
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 8300000, guid: 96f5ba3524a84084aba0be350b03b472, type: 3}
 --- !u!114 &775944548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11998,11 +11998,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor.NPCConversation
   CurrentIDCounter: 6
-  json: "{\"Options\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":137.605667,\"yPos\":162.894333},\"ID\":2,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ch\xE1u
-    ch\u1EC9 gh\xE9 th\u0103m th\xF4i \u1EA1.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":388.805664,\"yPos\":159.8},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Trong
-    l\xE0ng d\u1EA1o n\xE0y c\xF3 g\xEC l\u1EA1 kh\xF4ng \u1EA1?\",\"parentUIDs\":[0],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":284.90567,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Qu\u1EF3nh
+  json: "{\"Options\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-66.0000153,\"yPos\":162.894333},\"ID\":2,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ch\xE1u
+    ch\u1EC9 gh\xE9 th\u0103m th\xF4i \u1EA1.\",\"parentUIDs\":[0],\"SpeechUID\":-1},{\"Connections\":[{\"__type\":\"EditableSpeechConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":5}],\"EditorInfo\":{\"isRoot\":false,\"xPos\":185.199982,\"yPos\":159.8},\"ID\":4,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Trong
+    l\xE0ng d\u1EA1o n\xE0y c\xF3 g\xEC l\u1EA1 kh\xF4ng \u1EA1?\",\"parentUIDs\":[0],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":2},{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":4}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":81.29999,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Qu\u1EF3nh
     \u0111\xF3 \xE0? C\xF3 vi\u1EC7c g\xEC th\u1EBF ch\xE1u?\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\xD4ng
-    Quan T\u1ED5ng\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":387.2057,\"yPos\":277.600037},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"B\xECnh
+    Quan T\u1ED5ng\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1},{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":183.6,\"yPos\":277.600037},\"ID\":5,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"B\xECnh
     th\u01B0\u1EDDng th\xF4i ch\xE1u, ta \u0111ang ch\u1EDD c\xF3 th\u01B0 t\u1EEB
     kinh th\xE0nh v\u1EC1.\",\"parentUIDs\":[4],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\xD4ng
     Quan T\u1ED5ng\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
@@ -12947,9 +12947,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor.NPCConversation
   CurrentIDCounter: 1
-  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":true,\"xPos\":284.90567,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ch\xE1u
+  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":true,\"xPos\":81.29999,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ch\xE1u
     c\xF3 th\u01B0 c\u1EE7a ta kh\xF4ng? Mang sang \u0111\xE2y nhanh!\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\xD4ng
-    Quan T\u1ED5ng\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+    Quan T\u1ED5ng\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -13312,12 +13312,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor.NPCConversation
   CurrentIDCounter: 3
-  json: "{\"Options\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":151.666046,\"yPos\":164.705627},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"V\xE2ng!
-    Ch\xE1u s\u1EBD mang ngay.\",\"parentUIDs\":[0],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":270.754761,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ch\xE1u
+  json: "{\"Options\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":false,\"xPos\":-37.7887268,\"yPos\":164.705627},\"ID\":1,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"V\xE2ng!
+    Ch\xE1u s\u1EBD mang ngay.\",\"parentUIDs\":[0],\"SpeechUID\":-1}],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[{\"__type\":\"EditableOptionConnection:#DialogueEditor\",\"Conditions\":[],\"NodeUID\":1}],\"EditorInfo\":{\"isRoot\":true,\"xPos\":81.29999,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ch\xE1u
     \u01A1i, ta c\xF3 b\u1EE9c th\u01B0 c\u1EA7n g\u1EEDi \u0111\u1EBFn \xD4ng Quan
     T\u1ED5ng trong l\xE0ng. Ch\xE1u c\xF3 th\u1EC3 gi\xFAp ta mang \u0111\u1EBFn
     kh\xF4ng?\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"B\xE1c
-    Giao Th\u01B0\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+    Giao Th\u01B0\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
@@ -13513,7 +13513,7 @@ MonoBehaviour:
   NodeID: 0
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 8300000, guid: 8149b7633875d6e46a85b4c0202ab79a, type: 3}
 --- !u!1 &1601866302
 GameObject:
   m_ObjectHideFlags: 0
@@ -16081,7 +16081,7 @@ MonoBehaviour:
   NodeID: 0
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 8300000, guid: 250cf545508c737418422a89898323b1, type: 3}
 --- !u!114 &1927464529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16450,7 +16450,7 @@ MonoBehaviour:
   NodeID: 0
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 8300000, guid: 32c4b418db59ae14f8ca0fc9eb6aaa25, type: 3}
 --- !u!1 &1964408328
 GameObject:
   m_ObjectHideFlags: 0
@@ -17664,7 +17664,7 @@ MonoBehaviour:
   NodeID: 0
   TMPFont: {fileID: 0}
   Icon: {fileID: 0}
-  Audio: {fileID: 0}
+  Audio: {fileID: 8300000, guid: f30c9ee5d7378374b8ec3ce9e8590540, type: 3}
 --- !u!1 &2106982499
 GameObject:
   m_ObjectHideFlags: 0
@@ -18042,9 +18042,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEditor.NPCConversation
   CurrentIDCounter: 1
-  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":true,\"xPos\":284.90567,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ch\xE0o
+  json: "{\"Options\":[],\"Parameters\":[],\"SpeechNodes\":[{\"Connections\":[],\"EditorInfo\":{\"isRoot\":true,\"xPos\":81.29999,\"yPos\":22},\"ID\":0,\"ParamActions\":[],\"TMPFontGUID\":null,\"Text\":\"Ch\xE0o
     ch\xE1u Qu\u1EF3nh!\",\"parentUIDs\":[],\"AdvanceDialogueAutomatically\":false,\"AudioGUID\":null,\"AutoAdvanceShouldDisplayOption\":false,\"IconGUID\":null,\"Name\":\"\xD4ng
-    Quan T\u1ED5ng\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":0}]}"
+    Quan T\u1ED5ng\",\"OptionUIDs\":null,\"SpeechUID\":0,\"TimeUntilAdvance\":0,\"Volume\":1}]}"
   saveVersion: 110
   DefaultName: 
   DefaultSprite: {fileID: 0}
