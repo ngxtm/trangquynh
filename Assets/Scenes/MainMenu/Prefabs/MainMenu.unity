@@ -847,8 +847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f7c9cc37a8c14c90de60210bd62c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VolumeManager
-  audioMixer: {fileID: 24100000, guid: 9d9536dd515a46f45a9ee27a7403f21f, type: 2}
-  volumeSlider: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: bf60e0a8a4063e14f8898d86f183e694, type: 2}
+  volumeSlider: {fileID: 1904872767}
 --- !u!4 &1132025455
 Transform:
   m_ObjectHideFlags: 0
@@ -873,13 +873,13 @@ AudioSource:
   m_GameObject: {fileID: 1132025453}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: 9d9536dd515a46f45a9ee27a7403f21f, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: bf60e0a8a4063e14f8898d86f183e694, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: b88aef317d62a9842a8544444b482797, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

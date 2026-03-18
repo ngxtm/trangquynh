@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu/Prefabs/MainMenu.unity
     guid: a0be1299a53ad0943aac0d374552589f
   - enabled: 1
+    path: Assets/Scenes/MainMenu/Prefabs/Opening.unity
+    guid: 35c3cdd09b4c8e6408e88056db23f758
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69e9a213baae22458694e6ad7adcab2, type: 3}
+  m_Name: MiengThit
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  itemName: "Th\u1ECBt"
+  icon: {fileID: 21300000, guid: 3f113016262acb448ae7dce9a6dc473d, type: 3}
+  maxStackSize: 10
+  itemPrefab: {fileID: 7641337975755478161, guid: b2c5d509428ef634db2bb8638b7ba9ea, type: 3}
+  handItemPrefab: {fileID: 7641337975755478161, guid: b2c5d509428ef634db2bb8638b7ba9ea, type: 3}
+  description: "Th\u1ECBt cho l\u1EC5 l\xE0ng"
