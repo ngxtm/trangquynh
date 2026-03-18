@@ -1,62 +1,34 @@
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement; // Thêm thư viện này để chuyển cảnh
 
 public class VideoManager : MonoBehaviour
 {
     [Header("Components")]
     [SerializeField] private VideoPlayer _videoPlayer;
-    [SerializeField] private GameObject _endGameCanvas;
-
-    private bool isPaused = false;
-
+    
+    [Header("Settings")]
+    [SerializeField] private string _nextSceneName;
     void Start()
     {
-        if (_endGameCanvas != null)
-            _endGameCanvas.SetActive(false);
-
         if (_videoPlayer != null)
+        {
             _videoPlayer.loopPointReached += OnVideoEnd;
+        }
     }
 
     void OnVideoEnd(VideoPlayer vp)
     {
-        if (_endGameCanvas != null)
-        {
-            _endGameCanvas.SetActive(true);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-        }
+        LoadNextScene();
     }
 
-    void Update()
+    void LoadNextScene()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-            return;
-
-        if (Input.anyKeyDown)
+        if (!string.IsNullOrEmpty(_nextSceneName))
         {
-            if (!isPaused && _videoPlayer.isPlaying)
-            {
-                _videoPlayer.Pause();
-                OnVideoEnd(_videoPlayer);
-                isPaused = true;
-            }
-            else if (isPaused)
-            {
-                ContinueVideo();
-            }
+            SceneManager.LoadScene(_nextSceneName);
         }
-    }
-
-    void ContinueVideo()
-    {
-
-        if (_endGameCanvas != null)
-            _endGameCanvas.SetActive(false);
-
-        _videoPlayer.Play();
-        isPaused = false;
     }
 
     void OnDestroy()
