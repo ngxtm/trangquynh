@@ -23,6 +23,7 @@ public class Mission3Controller : MonoBehaviour, IConversationOverrideProvider
     [SerializeField] private NPCConversation reminderConversation;
     [SerializeField] private NPCConversation completeConversation;
     [SerializeField] private NPCConversation afterQuestConversation;
+    [SerializeField] private NPCConversation afterMiniGameConversation;
 
     [Header("Reward")]
     [SerializeField] private int rewardMoney = 20;
@@ -175,11 +176,25 @@ public class Mission3Controller : MonoBehaviour, IConversationOverrideProvider
 
         inventory.RemoveItem(meatItem, 1);
         inventory.RemoveItem(fishItem, 1);
-        
-        if (moneyManager != null) moneyManager.AddMoney(rewardMoney);
 
         state = MissionState.Completed;
         if (checklistUI != null) checklistUI.Hide();
         Debug.Log("Nhiệm vụ 3 hoàn thành!");
+    }
+
+    public void ContinueDialogueAfterMiniGame()
+    {
+        Debug.Log("Mini-game hoàn thành, tiếp tục hội thoại!");
+        
+        // Gọi hội thoại tiếp theo sử dụng DialogueEditor
+        if (afterMiniGameConversation != null)
+        {
+            ConversationManager.Instance.StartConversation(afterMiniGameConversation);
+            if (moneyManager != null) moneyManager.AddMoney(rewardMoney);
+        }
+        else
+        {
+            Debug.LogWarning("Chưa gán afterMiniGameConversation trong Inspector của Mission3Controller!");
+        }
     }
 }
