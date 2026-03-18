@@ -1477,11 +1477,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ab54d40cc13daa40bf1ba2a61724d32, type: 3}
---- !u!1 &155471980 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5898209872343802550, guid: e4e3eaaedf6fcb84ca7674016dc105ca, type: 3}
-  m_PrefabInstance: {fileID: 874390235}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &183018978
 GameObject:
   m_ObjectHideFlags: 0
@@ -4340,7 +4335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede31d13443fe6b4b81d2cbb1ef68d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MiniGameManager
-  inputManagerObject: {fileID: 155471980}
   dragDropCanvas: {fileID: 352641526}
   playerMovementScript: {fileID: 982881721}
 --- !u!4 &564300865
@@ -8018,9 +8012,9 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564300864}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
-        m_MethodName: OpenMiniGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9539,9 +9533,9 @@ MonoBehaviour:
   Event:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 564300864}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MiniGameManager, Assembly-CSharp
-        m_MethodName: OpenMiniGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14054,6 +14048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b903fb5c44406f047a8dbe4ecf48ae21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropZone
+  miniGameManager: {fileID: 0}
   OnWinGame:
     m_PersistentCalls:
       m_Calls: []
@@ -14773,6 +14768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b903fb5c44406f047a8dbe4ecf48ae21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropZone
+  miniGameManager: {fileID: 0}
   OnWinGame:
     m_PersistentCalls:
       m_Calls: []
@@ -14828,6 +14824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b903fb5c44406f047a8dbe4ecf48ae21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropZone
+  miniGameManager: {fileID: 0}
   OnWinGame:
     m_PersistentCalls:
       m_Calls:

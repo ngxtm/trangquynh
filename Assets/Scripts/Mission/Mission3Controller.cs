@@ -179,6 +179,7 @@ public class Mission3Controller : MonoBehaviour, IConversationOverrideProvider
 
         state = MissionState.Completed;
         if (checklistUI != null) checklistUI.Hide();
+        if (moneyManager != null) moneyManager.AddMoney(rewardMoney);
         Debug.Log("Nhiệm vụ 3 hoàn thành!");
     }
 

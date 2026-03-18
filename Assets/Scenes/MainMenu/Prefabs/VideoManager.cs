@@ -29,10 +29,6 @@ public class VideoManager : MonoBehaviour
         {
             SceneManager.LoadScene(_nextSceneName);
         }
-        else
-        {
-            Debug.LogWarning("Bạn chưa nhập tên Scene tiếp theo trong Inspector!");
-        }
     }
 
     void OnDestroy()
