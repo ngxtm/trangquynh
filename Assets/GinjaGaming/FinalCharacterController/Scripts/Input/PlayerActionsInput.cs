@@ -63,27 +63,18 @@ namespace GinjaGaming.FinalCharacterController
             GatherPressed = false;
         }
 
-        public void SetAttackPressedFalse() 
-        { 
-            AttackPressed = false;
-        }
         #endregion
-
         #region Input Callbacks
         public void OnGathering(InputAction.CallbackContext context)
         {
             if (!context.performed)
                 return;
-
             GatherPressed = true;
         }
-
         public void OnAttacking(InputAction.CallbackContext context)
         {
-            if (!context.performed)
-                return;
-
-            AttackPressed = true;
+            // Đã vô hiệu hóa tấn công
+            return;
         }
         #endregion
     }
