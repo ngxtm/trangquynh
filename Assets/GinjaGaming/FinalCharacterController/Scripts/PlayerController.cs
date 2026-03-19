@@ -73,9 +73,20 @@ namespace GinjaGaming.FinalCharacterController
         {
             _cameraControlEnabled = isEnabled;
 
-            if (!isEnabled && _playerLocomotionInput != null)
+            if (!isEnabled)
             {
-                _playerLocomotionInput.ClearLookInput();
+                // Khi TẮT điều khiển camera (đang chơi MiniGame)
+                if (_playerLocomotionInput != null) _playerLocomotionInput.ClearLookInput();
+                
+                // GIẢI PHÓNG CHUỘT NGAY LẬP TỨC
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+            else
+            {
+                // Khi BẬT lại điều khiển camera (quay lại chơi 3D)
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
             }
         }
         #endregion

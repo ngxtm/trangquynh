@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class DraggableFruit : MonoBehaviour
+public class DraggableFruit : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Thông tin quả")]
     public string fruitName; // Tên quả (VD: Xoài, Đu Đủ...)
@@ -15,29 +16,24 @@ public class DraggableFruit : MonoBehaviour
         if (canvasGroup == null) canvasGroup = gameObject.AddComponent<CanvasGroup>();
     }
 
-    public void OnBeginDrag(UnityEngine.EventSystems.PointerEventData eventData)
+    public void OnBeginDrag(PointerEventData eventData)
     {
-        parentAfterDrag = transform.parent;
-        
-        // Đưa quả lên lớp ngoài cùng để khi kéo không bị che
-        transform.SetParent(transform.root);
-        transform.SetAsLastSibling();
-
+        parentAfterDrag = transform.parent; // Lưu lại cha hiện tại (ví dụ: đang ở Bàn)
+        transform.SetParent(transform.root); // Đưa lên lớp trên cùng để không bị che
         canvasGroup.blocksRaycasts = false;
-        canvasGroup.alpha = 0.8f; 
     }
 
-    public void OnDrag(UnityEngine.EventSystems.PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        // Nếu không rơi vào DropZone nào, parentAfterDrag vẫn là giá trị cũ
+        transform.SetParent(parentAfterDrag); 
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1f;
+    }
+
+    public void OnDrag(PointerEventData eventData)
     {
         // Di chuyển theo chuột
         transform.position = eventData.position;
-    }
-
-    public void OnEndDrag(UnityEngine.EventSystems.PointerEventData eventData)
-    {
-        // Nhả chuột ra thì gắn vào cha mới (Mâm hoặc Bàn)
-        transform.SetParent(parentAfterDrag);
-        canvasGroup.blocksRaycasts = true;
-        canvasGroup.alpha = 1f;
     }
 }

@@ -1,44 +1,46 @@
 using UnityEngine;
+using GinjaGaming.FinalCharacterController; // Quan trọng: Phải có dòng này để gọi được PlayerController
 
 public class MiniGameManager : MonoBehaviour
 {
-    public static MiniGameManager Instance; // Dùng Singleton để các script khác (như DropZone) dễ dàng gọi đến
+    public static MiniGameManager Instance;
+    public GameObject dragDropCanvas;
+    public GameObject playerObject; // Kéo object "Player" vào đây
 
-    [Header("UI References")]
-    public GameObject dragDropCanvas; // Kéo cái Canvas hoặc Panel chứa game kéo thả vào đây
+    private void Awake() => Instance = this;
 
-    [Header("Player References")]
-    public MonoBehaviour playerMovementScript; // Kéo script di chuyển của nhân vật vào đây để tạm tắt lúc chơi game
-
-    private void Awake()
-    {
-        // Khởi tạo Singleton
-        if (Instance == null) Instance = this;
-    }
-
-    // Hàm này gọi khi Bấm vào Option thoại của Bác Trưởng Làng
     public void OpenMiniGame()
     {
-        dragDropCanvas.SetActive(true); // Hiện mini-game
+        dragDropCanvas.SetActive(true);
 
-        // Hiện và mở khóa con trỏ chuột để kéo đồ
+        // Lấy script Controller từ nhân vật
+        PlayerController controller = playerObject.GetComponent<PlayerController>();
+        if (controller != null)
+        {
+            // Tắt quyền điều khiển Camera (hàm này có sẵn trong code của bạn)
+            controller.SetCameraControlEnabled(false);
+            // Tắt luôn script để chắc chắn không nhận click chuột
+            controller.enabled = false;
+        }
+
+        // Hiện chuột và mở khóa
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
-        // Tạm dừng di chuyển nhân vật (nếu có kéo script vào)
-        if (playerMovementScript != null) playerMovementScript.enabled = false;
     }
 
-    // Hàm này được DropZone gọi khi xếp đủ 5 quả
     public void CloseMiniGame()
     {
-        dragDropCanvas.SetActive(false); // Ẩn mini-game
+        dragDropCanvas.SetActive(false);
 
-        // Ẩn và khóa chuột lại giữa màn hình để tiếp tục chơi 3D
+        PlayerController controller = playerObject.GetComponent<PlayerController>();
+        if (controller != null)
+        {
+            controller.enabled = true;
+            controller.SetCameraControlEnabled(true);
+        }
+        
+        // Khóa lại chuột khi quay về game 3D
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-
-        // Bật lại di chuyển nhân vật
-        if (playerMovementScript != null) playerMovementScript.enabled = true;
     }
 }
