@@ -1084,7 +1084,6 @@ MonoBehaviour:
   isAIEnabled: 0
   aiPlayer: 1
   aiDifficulty: 0
-  currentMode: 0
 --- !u!114 &5112315823319384013
 MonoBehaviour:
   m_ObjectHideFlags: 0

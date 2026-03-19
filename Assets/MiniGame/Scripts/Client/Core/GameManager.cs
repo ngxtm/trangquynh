@@ -377,7 +377,11 @@ public class GameManager : MonoBehaviour, IGameManager
             score1: p1Score,
             score2: p2Score,
             callbackPlayAgain: ResetGame,
-            callbackReturnToMenu: _gameState.CallbackBacktoMenu
+            callbackReturnToMenu: () => {
+                // Gửi kết quả về game lớn qua Bridge và tắt mini-game
+                bool playerWon = p1Score > p2Score;
+                OQuanBridge.NotifyGameEnd(playerWon, p1Score, p2Score);
+            }
         );
     }
     #endregion

@@ -30,7 +30,6 @@ public class LoginUI : MonoBehaviour
     public void Show()
     {
         gameObject.SetActive(true);
-        SlashScreenControl.instance?.Show(true, SlashScreenControl.instance.Sprites.Length - 1, 1);
     }
 
     void StartGame(bool vsAI)

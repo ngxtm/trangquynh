@@ -87,11 +87,13 @@ public class GameState : MonoBehaviour, GameStateMachine
         Application.targetFrameRate = 60;
         Time.fixedDeltaTime = 1 / 50f;
         Application.runInBackground = true;
-        ButtonSettingClick.instance.Init(CallbackClickPause);
+        if (ButtonSettingClick.instance != null)
+            ButtonSettingClick.instance.Init(CallbackClickPause);
         _gameManager = UIObject.GetComponent<GameManager>();
         _pauseUI = UIObject.transform.Find("PauseUI")?.GetComponent<PauseUI>();
         _gameManager.Initialize(this);
-        _pauseUI.Init(CallbackContinue, CallbackPlayAgain, CallbackBacktoMenu, CallbackOpenSetting);
+        if (_pauseUI != null)
+            _pauseUI.Init(CallbackContinue, CallbackPlayAgain, CallbackBacktoMenu, CallbackOpenSetting);
         //_settingUI.Init();
         
         // Wait a frame for initialization
@@ -104,19 +106,14 @@ public class GameState : MonoBehaviour, GameStateMachine
             Debug.Log("✅ LoadingState disabled from GameState.Init()");
         }
         
-        // Ensure splash screen is hidden
-        if (SlashScreenControl.instance != null)
-        {
-            SlashScreenControl.instance.Hide();
-            Debug.Log("✅ SlashScreen hidden from GameState.Init()");
-        }
+
         
         // Enable GameState UI
         Enable();
         Debug.Log("✅ GameState enabled from Init()");
     }
 
-    public void CallbackClickPause() => _pauseUI.Show();
+    public void CallbackClickPause() { if (_pauseUI != null) _pauseUI.Show(); }
 
     public void CallbackContinue()
     {
@@ -130,8 +127,8 @@ public class GameState : MonoBehaviour, GameStateMachine
 
     public void CallbackBacktoMenu()
     {
-        print("CallbackBacktoMenu");
-        DoChangeState(typeof(LoadingState), ChangeStateEffect.EffectType.None, 0);
+        // Gửi tín hiệu kết thúc mini-game về game lớn (quay về không có kết quả)
+        OQuanBridge.NotifyGameEnd(false, 0, 0);
     }
 
     public void CallbackOpenSetting()

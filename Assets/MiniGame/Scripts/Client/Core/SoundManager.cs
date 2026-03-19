@@ -45,7 +45,7 @@ public class SoundManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        // Không dùng DontDestroyOnLoad vì SoundManager nằm trong OQuanRoot (không phải root)
 
         // Build lookup tables
         _bgmMap = new Dictionary<string, AudioClip>();

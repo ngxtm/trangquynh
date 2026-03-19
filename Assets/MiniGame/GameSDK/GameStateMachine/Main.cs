@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -173,6 +173,7 @@ public class Main : MonoBehaviour {
     public static int TouchCount;
     void UpdateInput ()
     {
+        if (_Interaction == null || CurrentState == null) return;
         if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
         {
             TouchCount = Input.touchCount;
